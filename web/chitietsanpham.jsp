@@ -76,6 +76,7 @@
 
                 <div class="center_c_mau_gh">
 
+
                     <h2 class="title_f_m_gh_main">Chi Tiết Sản Phẩm</h2>
                     <div class="info_content_title">
                         <h1>[ORDER] ÁO SƠ MI CỔ VIỀN HOA 01343</h1>
