@@ -102,7 +102,7 @@
                                     <!-- begin list sp -->
                                     <%for(SPPojo sp : dsSP){%>
                                     <li>
-                                        <a href="#" title=""><img src="<%=sp.getHinhAnh()%>" alt=""/></a>
+                                        <a href="chitietsanpham.jsp" title=""><img src="<%=sp.getHinhAnh()%>" alt=""/></a>
                                         <h2 class="title_prod_news">
                                             <a href="#" title=""><%=sp.getTenSP()%></a>
                                         </h2>
