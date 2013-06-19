@@ -373,3 +373,92 @@ body{
 }
 /****************************************************************/
 
+
+.content_item_detail .item_detail_header {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.content_item_detail .item_detail_header .item_detail_header_content {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+
+.item_detail_header_content .header_info {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+
+.item_detail_header_content .header_info .header_info_left {
+    float: left;
+    margin: 0 10px 0 0;
+    position: relative;
+    width: 405px;
+}
+
+
+.flexslider {
+    background: none repeat scroll 0 0 transparent;
+    margin: 0;
+    position: relative;
+}
+.flexslider {
+    margin: 0;
+    padding: 0;
+}
+
+
+.slides:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+html[xmlns] .slides {
+    display: block;
+}
+
+
+.item_detail_header_content .header_info .header_info_right {
+    float: right;
+    margin: 0;
+    width: 310px;
+}
+
+.header_info_right .info_right_info {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+
+.info_right_info .right_info_content {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.right_info_content .info_content_title {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.info_content_title h1 {
+    font: 18px Arial;
+}
+
+
+.right_info_content .info_content_share {
+    clear: both;
+    float: left;
+    padding: 15px 0 0;
+    width: 100%;
+}
