@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script type="text/javascript" src="JavaScript/jquery-1.4.4.js"></script>
+<script type="text/javascript" src="JavaScript/ddaccordion.js"></script>
+<script type="text/javascript" src="JavaScript/jquery.bxSlider.js"></script>
+<script type="text/javascript" src="JavaScript/index.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#slider1').bxSlider({
+			auto: true,
+			mode: 'fade',	
+			pager: true,
+			controls: false
+		});
+	});	
+</script>
+<script type="text/javascript">
+	ddaccordion.init({
+	headerclass: "silverheader",
+	contentclass: "submenu",
+	revealtype: "click",
+	mouseoverdelay: 200,
+	collapseprev: true,
+	defaultexpanded: [0],
+	onemustopen: true,
+	animatedefault: false,
+	persiststate: true,
+	toggleclass: ["", "selected"],
+	togglehtml: ["", "", ""],
+	animatespeed: "fast",
+	oninit:function(headers, expandedindices){
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){
+		//do nothing
+	}
+})
+</script>
+<script type="text/javascript">
+	function tick2(){
+		$('#ticker_02 li:first').slideUp( function () { $(this).appendTo($('#ticker_02')).slideDown(); });
+		}
+		setInterval(function(){ tick2 () }, 3000);
+</script>
+
+<!--[if IE 6]>
+<script src="scripts/DD_belatedPNG_0.0.8a.js"></script>
+<script>
+  DD_belatedPNG.fix('img, div, span, a, h1, h2, h3, h4, h5, h6, p, table');
+</script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="templates/FIX_IE.css" />
+<![endif]-->
+</head>
+<body style="background:#000 url(imgs/layout10/body_bg.jpg) no-repeat fixed top center;">
+    <div id="wrapper_mau_gh"> 
+    
+        <div id="header_mau_gh">
+        
+        	<div class="banner_mau_gh">
+            	<img src="imgs/layout10/banner_bg.jpg" alt=""/>
+            </div><!-- End .banner_mau_gh -->
+            <div class="menu_mau_gh">            	
+				<ul class="nav_menu_mau_gh">
+                	<li class="curren"><a href="" title="">Trang chủ</a></li>
+                    <li><span class="line_menu"></span></li>
+                    <li><a href="" title="">Sản phẩm</a></li>
+                    <li><span class="line_menu"></span></li>
+                    <li><a href="" title="">Giỏ hàng</a></li>
+                    <li><span class="line_menu"></span></li>
+                    <li><a href="" title="">Thanh toán</a></li>
+                    <li><span class="line_menu"></span></li>
+               	  <li><a href="" title="">Tài khoản</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div><!-- End .menu_mau_gh -->
+            
+        </div><!-- End #header_mau_gh -->
+        
+        <div id="content_mau_gh">
+        
+        	<div class="left_c_mau_gh">
+            
+            	<div class="frame_mau_gh">
+                	<h2 class="title_f_m_gh">
+                    	Danh mục sản phẩm
+                    </h2><!-- End .title_f_m_gh -->
+                    <div class="main_f_m_gh">
+                    
+                    	<div class="dmsp_mau_gh">
+                            <div class="silverheader">
+                                <span class="icon_arown_dmsp"></span>
+                                <a href="JavaScript:void(0);" title="">Quần tây Dior</a>
+                            </div>
+                            <ul class="submenu">
+                                <li><a href="#" title="">-:- Quần tây Dior Hàn Quốc</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Đài Loan</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Nhật Bản</a></li>
+                            </ul>
+                            
+                            <div class="silverheader">
+                                <span class="icon_arown_dmsp"></span>
+                                <a href="JavaScript:void(0);" title="">Quần tây Dior</a>
+                            </div>
+                            <ul class="submenu">
+                                <li><a href="#" title="">-:- Quần tây Dior Hàn Quốc</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Đài Loan</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Nhật Bản</a></li>
+                            </ul>
+                            
+                            <div class="silverheader">
+                                <span class="icon_arown_dmsp"></span>
+                                <a href="JavaScript:void(0);" title="">Quần tây Dior</a>
+                            </div>
+                            <ul class="submenu">
+                                <li><a href="#" title="">-:- Quần tây Dior Hàn Quốc</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Đài Loan</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Nhật Bản</a></li>
+                            </ul>
+                            
+                            <div class="silverheader">
+                                <span class="icon_arown_dmsp"></span>
+                                <a href="JavaScript:void(0);" title="">Quần tây Dior</a>
+                            </div>
+                            <ul class="submenu">
+                                <li><a href="#" title="">-:- Quần tây Dior Hàn Quốc</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Đài Loan</a></li>
+                                <li><a href="#" title="">-:- Quần tây Dior Nhật Bản</a></li>
+                            </ul>
+                        </div><!-- End .dmsp_mau_gh -->
+                        
+                    </div><!-- End .main_f_m_gh -->
+                </div><!-- End .frame_mau_gh --><!-- End .frame_mau_gh -->
+                
+              <div class="frame_mau_gh">
+                	<h2 class="title_f_m_gh">
+                    	Thống kê truy cập
+                    </h2><!-- End .title_f_m_gh -->
+                    <div class="main_f_m_gh">
+                                        	
+                        <div class="tktc_mau_gh">
+                        	<ul>
+                            	<li>-:- Đang online : 1000</li>
+                            	<li>-:- Truy cập trong ngày : 1000</li>
+                            	<li>-:- Lượt truy cập : 1000</li>
+                            </ul>
+                        </div><!-- End .tktc_mau_gh -->
+                        
+                    </div><!-- End .main_f_m_gh -->
+              </div><!-- End .frame_mau_gh --><!-- End .frame_mau_gh -->
+                
+            </div><!-- End .left_c_mau_gh -->
+            
+            <div class="center_c_mau_gh">
+              <div class="frame_product_mau_gh">
+              
+                	<h2 class="title_f_m_gh_main">Sản phẩm bán chạy</h2>
+                	<!-- End .title_f_p_m_gh -->
+                    <div class="main_f_p_m_gh">
+                    	
+                        <div class="prod_mau_gh">
+                        	<ul>
+                            	<li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/img2.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div><!-- End .prod_mau_gh -->
+                        
+                    </div><!-- End .main_f_p_m_gh -->
+                    <div class="footer_f_p_m_gh">
+                    	<a href="#" title="Xem tất cả">XEM TẤT CẢ</a>
+                    </div><!-- End .footer_f_p_m_gh -->
+                </div><!-- End .frame_product_mau_gh -->
+            </div><!-- End .center_c_mau_gh -->
+            
+          <div class="right_mau_gh">
+            
+            	<div class="frame_mau_gh">
+                	<h2 class="title_f_m_gh">Xin chào ABC, <a href="" style="color:#CF3;">Thoát</a></h2><!-- End .title_f_m_gh -->
+                    <div class="main_f_m_gh">
+                        	<!--<embed width="188" height="150" scale="exactfit" quality="high" wmode="transparent" type="application/x-shockwave-flash" src="http://www.youtube.com/v/IxUsgXCaVtc" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>-
+                        </div><!-- End .dnhap_mau_gh -->
+                        
+                    </div><!-- End .main_f_m_gh -->
+                </div><!-- End .frame_mau_gh -->
+            
+            	<div class="frame_mau_gh">
+                	<h2 class="title_f_m_gh">
+                    	Tìm kiếm
+                    </h2><!-- End .title_f_m_gh -->
+                    <div class="main_f_m_gh">
+                                        	
+                        <div class="search_mau_gh">
+                        	<form>
+                            	<input class="inputsearch_mau_gh" type="text" value="Nhập từ khóa..." onBlur="if(this.value=='') this.value='Nhập từ khóa...';" onFocus="if(this.value=='Nhập từ khóa...') this.value='';"/>
+                                <div style="padding-top:10px;">
+                                	<input class="inputgiatu_mau_gh" type="text" value="Giá từ" onBlur="if(this.value=='') this.value='Giá từ';" onFocus="if(this.value=='Giá từ') this.value='';"/>
+                                    <input class="inputgiaden_mau_gh" type="text" value="Giá đến" onBlur="if(this.value=='') this.value='Giá đến';" onFocus="if(this.value=='Giá đến') this.value='';"/>
+                                    <div class="clear"></div>
+                                </div>
+                                <div style="padding-top:10px;">
+                                  <div class="clear"></div>
+                                </div>
+                                <div style="text-align:center; padding-top:10px;">
+                                	<input title="Tìm kiếm" class="btn_search" type="submit" value="&nbsp;"/>
+                                </div>
+                            </form>
+                        </div><!-- End .search_mau_gh -->
+                        
+                    </div><!-- End .main_f_m_gh -->
+                </div><!-- End .frame_mau_gh -->
+            
+            	<div class="frame_mau_gh">
+                	<h2 class="title_f_m_gh">
+                    	Sản phẩm bán chạy
+                    </h2><!-- End .title_f_m_gh -->
+                    <div class="main_f_m_gh">
+                                        	
+                        <div class="sp_mau_gh">
+                        	<ul id="ticker_02">
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/pic_adv.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/pic_adv.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/pic_adv.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/pic_adv.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                                <li>
+                                	<a href="#" title=""><img src="imgs/layout10/pic_adv.jpg" alt=""/></a>
+                                    <h2 class="title_prod_news">
+                                    	<a href="#" title="">GiayTayDiorD67b</a>
+                                    </h2>
+                                    <h4 class="price_prod_mau_gh">1.500.000 VNĐ</h4>
+                                </li>
+                            </ul>
+                        </div><!-- End .sp_mau_gh -->
+                        
+                    </div><!-- End .main_f_m_gh -->
+                </div><!-- End .frame_mau_gh -->
+                
+          </div><!-- End .right_mau_gh -->
+            
+            <div class="clear"></div>
+        
+        </div><!-- End #content_mau_gh -->
+        
+        <div id="footer_mau_gh">
+        	<div class="menu_footer">
+            	<span><a href="#" title="">Trang chủ</a></span>
+                <span>|</span>
+            	<span><a href="#" title="">Giới thiệu</a></span>
+                <span>|</span>
+            	<span><a href="#" title="">Sản phẩm</a></span>
+                <span>|</span>
+            	<span><a href="#" title="">Tin tức</a></span>
+                <span>|</span>
+            	<span><a href="#" title="">Khuyến mãi</a></span>
+                <span>|</span>
+            	<span><a href="#" title="">Thanh toán</a></span>
+                <span>|</span>                
+            	<span><a href="#" title="">Liên hệ</a></span>
+            </div><!-- End .menu_footer -->
+            <div class="info_footer">
+                Copyright © 2011 giaydior.com. All rights reserved.<br />
+                Địa chỉ : 65A2 Đinh Công Tráng, P. Tân Định, Q. 1, Tp. HCM<br />
+                Điện thoại : 0933.010.805<br />
+                Email : michealton88@gmail.com
+            </div><!-- End .info_footer -->
+        </div><!-- End #footer_mau_gh -->
+      
+    </div><!-- End #wrapper_mau_gh -->
+    
+
+</body>
+</html>
