@@ -19,13 +19,13 @@
             </div><!-- End .banner_mau_gh -->
             <div class="menu_mau_gh">            	
                 <ul class="nav_menu_mau_gh">
-                    <li class="curren"><a href="" title="">Trang chủ</a></li>
+                    <li class="curren"><a href="http://localhost:8084/shopquanao" title="">Trang chủ</a></li>
                     <li><span class="line_menu"></span></li>
                     <li><a href="" title="">Sản phẩm bán chạy</a></li>
                     <li><span class="line_menu"></span></li>
                     <li><a href="" title="">Khuyến mãi</a></li>
                     <li><span class="line_menu"></span></li>
-                    <li><a href="" title="">Giỏ hàng</a></li>
+                    <li><a href="giohang.jsp" title="">Giỏ hàng</a></li>
                     <li><span class="line_menu"></span></li>
                     <li><a href="" title="">Liên hệ</a></li>
                     <li><span class="line_menu"></span></li>

@@ -429,7 +429,7 @@ html[xmlns] .slides {
 
 
 .item_detail_header_content .header_info .header_info_right {
-    float: right;
+    float: left;
     margin: 0;
     width: 310px;
 }
@@ -461,4 +461,265 @@ html[xmlns] .slides {
     float: left;
     padding: 15px 0 0;
     width: 100%;
+}
+
+.content_item_detail .item_detail_info {
+    border-bottom: 1px solid #D5D5D5;
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    padding: 0 0 20px;
+    width: 100%;
+}
+
+
+element.style {
+    background: url("imgs/layout10/body_bg.jpg") no-repeat fixed center top #000000;
+}
+body {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: 100%;
+}
+* {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+.content_item_detail .item_detail_info .detail_info_content {
+    border: 1px solid #D5D5D5;
+    clear: both;
+    float: left;
+    padding: 10px 20px;
+    width: 698px;
+}
+
+
+element.style {
+    background: url("imgs/layout10/body_bg.jpg") no-repeat fixed center top #000000;
+}
+body {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: 100%;
+}
+* {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+.detail_info_content b.term_header {
+    margin: 0 5px 0 0;
+    padding: 5px 10px 5px 5px;
+}
+
+element.style {
+    background: url("imgs/layout10/body_bg.jpg") no-repeat fixed center top #000000;
+}
+body {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: 100%;
+}
+* {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+.detail_info_content b.term_header a {
+}
+a {
+    color: #737373;
+    outline: medium none;
+    text-decoration: none;
+}
+.detail_info_content .detail_content {
+    line-height: 18px;
+    padding: 15px 5px 5px 15px;
+    word-spacing: 3px;
+}
+
+element.style {
+    background: url("imgs/layout10/body_bg.jpg") no-repeat fixed center top #000000;
+}
+body {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: 100%;
+}
+* {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+.detail_info_content .buy_center_button_box {
+    clear: both;
+    float: left;
+    width: 698px;
+}
+
+element.style {
+    background: url("imgs/layout10/body_bg.jpg") no-repeat fixed center top #000000;
+}
+body {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: 100%;
+}
+* {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+a.buy_center_button {
+     background: url("http://static.thoitrangdshop.vn/Images/Deal14/icon-big.png") no-repeat scroll -5px -1403px transparent;
+    display: block;
+    float: left;
+    height: 44px;
+    margin: auto;
+    width: 569px;
+}
+
+
+.buy_cart_content .buy_cart_content_title {
+    background: url("http://static.thoitrangdshop.vn/Images/Deal14/icon-big.png") no-repeat scroll -4px -1187px transparent;
+    clear: both;
+    float: left;
+    height: 41px;
+    width: 100%;
+}
+
+
+.container-page {
+    margin: 0 auto;
+    width: 555px;
+}
+
+
+.clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .main:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-view .box-tags .form-add:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+
+.clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .main:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-view .box-tags .form-add:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.title_content {
+    background: url("/skin/frontend/default/ecom/images/cart_icon_h.gif") no-repeat scroll left center #FFFFFF;
+    border: medium none !important;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -15px;
+}
+
+.title_content h1 {
+    color: #CC0000;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+
+.cart #shopping-cart-table {
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cart .cart-collaterals {
+    margin-top: 10px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, div {
+    display: block;
+}
+
+.cart .cart-collaterals .col2-set {
+    float: left;
+    width: 700px;
+}
+
+.cart-collaterals .col2-set .col-2 {
+    float: left;
+    line-height: 20px;
+    width: 100%;
+}
+.cart .totals {
+    float: right;
+}
+
+.cart .totals table {
+    width: 100%;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.cart .checkout-types {
+    float: right;
+    text-align: right;
+}
+ol, ul {
+    list-style: none outside none;
+}
+.cart .checkout-types {
+    text-align: right;
+}
+.btn-proceed-checkout.btn-checkout {
+    margin-top: 10px;
+}
+button.button {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    width: auto;
+}
+
+button.button span {
+    color: black;
+    float: left;
+    font: bold 12px/38px Arial,Helvetica,sans-serif;
+    height: 38px;
+    padding: 0 0 0 6px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button.button span span {
+    background-position: 100% 0;
+    padding: 0 12px 0 4px;
+}
+
+
+.cart-table tr > td:first-child {
+    border-left: medium none;
+}
+
+
+.data-table td {
+    padding: 8px;
+}
+.cart-table td {
+    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+}
+caption, th, td {
+    font-weight: normal;
 }
