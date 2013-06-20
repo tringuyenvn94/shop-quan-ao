@@ -4,6 +4,8 @@
  */
 package pojo;
 
+import dao.util.Utility;
+
 /**
  *
  * @author luctanbinh
@@ -13,6 +15,7 @@ public class ChiTietDonDatHangPojo {
     private int maDonDatHang;
     private int maSP;
     private int soLuong;
+    private float donGia;
 
     /**
      * @return the maChiTiet
@@ -68,5 +71,23 @@ public class ChiTietDonDatHangPojo {
      */
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
+    }
+    
+    public String getGiaTien(){
+        return Utility.toVND(donGia);
+    }
+
+    /**
+     * @return the donGia
+     */
+    public float getDonGia() {
+        return donGia;
+    }
+
+    /**
+     * @param donGia the donGia to set
+     */
+    public void setDonGia(float donGia) {
+        this.donGia = donGia;
     }
 }

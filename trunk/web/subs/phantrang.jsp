@@ -7,15 +7,16 @@
 <%
     Integer trang = (Integer)request.getAttribute("trang");
     Integer soTrang = (Integer)request.getAttribute("soTrang");
+    String trangHienTai = (String)request.getAttribute("trangHienTai");
 %>
 <!DOCTYPE html>
 <div id="phantrang">
                     	<font style="color:#666;font-size:14px;">Trang:</font>
                         <%for(int i = 1; i <= soTrang; i++){
                             if(i == trang){%>
-                            <a class="tranghientai" href="index.jsp?trang=<%=i%>"><%=i%></a>
+                            <a class="tranghientai" href="<%=trangHienTai%>trang=<%=i%>"><%=i%></a>
                             <%}else{%>
-                            <a class="ovuong" href="index.jsp?trang=<%=i%>"><%=i%></a>
+                            <a class="ovuong" href="<%=trangHienTai%>trang=<%=i%>"><%=i%></a>
                             <%}
                         }%>
 

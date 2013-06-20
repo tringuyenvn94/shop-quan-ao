@@ -19,7 +19,7 @@
             </div><!-- End .banner_mau_gh -->
             <div class="menu_mau_gh">            	
                 <ul class="nav_menu_mau_gh">
-                    <li class="curren"><a href="http://localhost:8084/shopquanao" title="">Trang chủ</a></li>
+                    <li class="curren"><a href="index.jsp" title="">Trang chủ</a></li>
                     <li><span class="line_menu"></span></li>
                     <li><a href="" title="">Sản phẩm bán chạy</a></li>
                     <li><span class="line_menu"></span></li>

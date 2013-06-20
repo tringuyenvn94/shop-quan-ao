@@ -6,6 +6,7 @@ package pojo;
 
 import dao.dondathangdao;
 import dao.giohangdao;
+import dao.util.Utility;
 import java.util.ArrayList;
 
 /**
@@ -64,7 +65,14 @@ public class GioHangPojo {
      */
     public float getTongTien() {
         tongTien = 0;
+        for(ChiTietDonDatHangPojo ct: dsChiTiet){
+            tongTien += ct.getDonGia();
+        }
         return tongTien;
+    }
+    
+    public String getGiaTien(){
+        return Utility.toVND(getTongTien());
     }
 
     /**

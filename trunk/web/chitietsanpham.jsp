@@ -11,22 +11,13 @@
 <%@page import="pojo.*" %> 
 <%@page import="dao.util.Utility"%>
 <%
-    int trang = 1;
-    int soLuongTrenTrang = 10;
-    String strTrang = request.getParameter("trang");
-    if (strTrang != null) {
-        trang = Integer.parseInt(strTrang);
+    int id = -1;
+    String strId = request.getParameter("id");
+    if (strId != null) {
+        id = Integer.parseInt(strId);
     }
-
-    int soTrang = SPDao.tinhSoTrang(-1, soLuongTrenTrang);
-    request.setAttribute("trang", trang);
-    request.setAttribute("soTrang", soTrang);
-
-    ArrayList<SPPojo> dsSP = SPDao.layDanhSachSP(trang, 10);
-
-
+    SPPojo sp = SPDao.laySP(id);
     KhachHangPojo user = (KhachHangPojo) session.getAttribute("user");
-
 %>
 <!DOCTYPE html>
 <html>
@@ -37,28 +28,6 @@
         <script type="text/javascript" src="js/jquery-1.4.4.js"></script>
         <script type="text/javascript" src="js/ddaccordion.js"></script>
         <script type="text/javascript" src="js/jquery.bxSlider.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $('#slider1').bxSlider({
-                    auto: true,
-                    mode: 'fade',
-                    pager: true,
-                    controls: false
-                });
-            });
-        </script>
-
-        <script type="text/javascript">
-            function tick2() {
-                $('#ticker_02 li:first').slideUp(function() {
-                    $(this).appendTo($('#ticker_02')).slideDown();
-                });
-            }
-            setInterval(function() {
-                tick2()
-            }, 3000);
-        </script>
     </head>
     <body style="background:#000 url(imgs/layout10/body_bg.jpg) no-repeat fixed top center;">
         <div id="wrapper_mau_gh"> 
@@ -77,10 +46,7 @@
                 <div class="center_c_mau_gh">
 
 
-                    <h2 class="title_f_m_gh_main">Chi Tiết Sản Phẩm</h2>
-                    <div class="info_content_title">
-                        <h1>[ORDER] ÁO SƠ MI CỔ VIỀN HOA 01343</h1>
-                    </div>
+                    <h2 class="title_f_m_gh_main"><%=sp.getTenSP()%></h2>
                     <div class="item_detail_header">
 
                         <div class="item_detail_header_content">
@@ -88,17 +54,9 @@
                             <div class="header_info">
                                 <div class="header_info_left">
                                     <div class="flexslider">
-
-
-
-                                        <img width="405" height="506" title="[Order] Áo Sơ Mi Cổ Viền Hoa 01343" alt="[Order] Áo Sơ Mi Cổ Viền Hoa 01343" src="http://thoitrangdshop.vn/uploads/slider_images/order]-ao-so-mi-co-vien-hoa-01343-1133_4.jpg" class="clsImage" original="http://thoitrangdshop.vn/uploads/slider_images/order]-ao-so-mi-co-vien-hoa-01343-1133_1.jpg" style="">
-
-
-
+                                        <img width="405" height="506" title="<%=sp.getTenSP()%>" alt="<%=sp.getTenSP()%>" src="<%=sp.getHinhAnh()%>" class="clsImage" original="<%=sp.getHinhAnh()%>" style="">
                                     </div>
-
                                     <div class="info_left_type_1 dealtype"></div>
-
                                 </div>
 
                                 <div class="header_info_right">
@@ -106,26 +64,14 @@
                                     <div class="info_right_info">
 
                                         <div class="right_info_content">
-
-
-
-
-
-
-
-
                                             <div class="info_content_buy">
-
-
-
                                                 <a title="" class="buy_button" name="popup_buy" href="javascript:void(0);"></a>
-
                                             </div>
 
                                             <div class="info_content_note">
                                                 <p style="float:left;height:31px;line-height:31px;width:100%; margin: 5px 0px 0px 0px">
                                                     <span style="font-size: small;"><img src="/userfiles/image/feature-hot.png" alt="" style="float:left;" original="/userfiles/image/feature-hot.png"
-                                                                                         <strong><font color="#ff0066">Giá</font> : 200.000 VNĐ</strong>
+                                                                                         <strong><font color="#ff0066">Giá</font> : <%=sp.getGiaTien()%></strong>
                                                     </span>
                                                 </p>
                                                  <p><span style="font-size: small;"><font color="#ff0066"> </font></span></p>
@@ -188,47 +134,9 @@
                     <!-- End .frame_product_mau_gh -->
                 </div><!-- End .center_c_mau_gh -->
 
-                <div class="right_mau_gh">
-
-                    <!-- begin login -->
-                    <%if (user == null) {%>
-                    <jsp:include page="subs/loginRegion.jsp"/>
-                    <%}%>
-                    <!-- end login -->
-
-                    <div class="frame_mau_gh">
-                        <h2 class="title_f_m_gh">
-                            Tìm kiếm
-                        </h2><!-- End .title_f_m_gh -->
-                        <div class="main_f_m_gh">
-
-                            <div class="search_mau_gh">
-                                <form>
-                                    <input class="inputsearch_mau_gh" type="text" value="Nhập từ khóa..." onBlur="if (this.value == '')
-                                                            this.value = 'Nhập từ khóa...';" onFocus="if (this.value == 'Nhập từ khóa...')
-                                                            this.value = '';"/>
-                                    <div style="padding-top:10px;">
-                                        <input class="inputgiatu_mau_gh" type="text" value="Giá từ" onBlur="if (this.value == '')
-                                                            this.value = 'Giá từ';" onFocus="if (this.value == 'Giá từ')
-                                                            this.value = '';"/>
-                                        <input class="inputgiaden_mau_gh" type="text" value="Giá đến" onBlur="if (this.value == '')
-                                                            this.value = 'Giá đến';" onFocus="if (this.value == 'Giá đến')
-                                                            this.value = '';"/>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="padding-top:10px;">
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="text-align:center; padding-top:10px;">
-                                        <input title="Tìm kiếm" class="btn_search" type="submit" value="&nbsp;"/>
-                                    </div>
-                                </form>
-                            </div><!-- End .search_mau_gh -->
-
-                        </div><!-- End .main_f_m_gh -->
-                    </div><!-- End .frame_mau_gh -->
-
-                </div><!-- End .right_mau_gh -->
+                <!-- begin right-->
+                <jsp:include page="subs/right.jsp"/>
+                <!-- end right -->
 
                 <div class="clear"></div>
 

@@ -8,7 +8,6 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author NHAnh
@@ -39,7 +38,7 @@ public class MySqlDataAccessHelper {
          Properties pros = new Properties();
          pros.setProperty("characterEncoding", "utf8");
          pros.setProperty("user", "root");
-         pros.setProperty("password", "");
+         pros.setProperty("password", "root");
          this.connection = DriverManager.getConnection(connectionString, pros);
       } catch (SQLException ex) {
          System.out.println(ex.getMessage());

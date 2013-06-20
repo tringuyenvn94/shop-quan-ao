@@ -22,7 +22,13 @@ public class SPPojo {
     private String giaTien;
     private int soLuong;
 
-    
+    public String getShortMoTa(){
+        int l = 100;
+        if(moTa.length() < l){
+            l = moTa.length();
+        }
+        return moTa.substring(0, l);
+    }
     /**
      * @return the maSP
      */
