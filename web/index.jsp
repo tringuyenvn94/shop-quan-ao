@@ -17,9 +17,9 @@
     request.setAttribute("soTrang", soTrang);
     
     ArrayList<SPPojo> dsSP = SPDao.layDanhSachSP(trang, 10);
+    request.setAttribute("dsSP", dsSP);
     
-    
-    KhachHangPojo user = (KhachHangPojo) session.getAttribute("user");
+    request.setAttribute("trangHienTai", "index.jsp?");
     
 %>
 <!DOCTYPE html>
@@ -92,81 +92,17 @@
                     </div>
                     <!-- End slide show -->
 
-                    <div class="frame_product_mau_gh">
-                        <!-- sp title -->
-                        <h2 class="title_f_m_gh_main">Sản phẩm bán chạy</h2>
-                        <!-- end sp title -->
-                        <div class="main_f_p_m_gh">
-                            <div class="prod_mau_gh">
-                                <ul>
-                                    <!-- begin list sp -->
-                                    <%for(SPPojo sp : dsSP){%>
-                                    <li>
-                                        <a href="chitietsanpham.jsp" title=""><img src="<%=sp.getHinhAnh()%>" alt=""/></a>
-                                        <h2 class="title_prod_news">
-                                            <a href="#" title=""><%=sp.getTenSP()%></a>
-                                        </h2>
-                                        <h4 class="price_prod_mau_gh"><%=sp.getGiaTien()%></h4>
-                                        <h2 class="title_prod_news">
-                                            <a href="#" title="">Cho Vào Giỏ Hàng</a>
-                                        </h2>
-                                    </li>
-                                    <%}%>                                    
-                                    <!-- end list sp -->
-                                    <div class="clear"></div>
-                                </ul>
-                            </div><!-- End .prod_mau_gh -->
-
-                        </div><!-- End .main_f_p_m_gh -->
-                        
-                        <!-- begin phantrang -->
-                        <jsp:include page="subs/phantrang.jsp"/>
-                        <!-- end phantrang -->
-                        
-                    </div><!-- End .frame_product_mau_gh -->
+                    <%
+                         request.setAttribute("title", "Sản phẩm bán chạy");
+                    %>
+                    <!-- begin main contents -->
+                    <jsp:include page="subs/danhsachsanpham.jsp"/>
+                    <!-- end main contents -->
                 </div><!-- End .center_c_mau_gh -->
 
-                <div class="right_mau_gh">
-
-                    <!-- begin login -->
-                    <%if (user == null) {%>
-                    <jsp:include page="subs/loginRegion.jsp"/>
-                    <%}%>
-                    <!-- end login -->
-
-                    <div class="frame_mau_gh">
-                        <h2 class="title_f_m_gh">
-                            Tìm kiếm
-                        </h2><!-- End .title_f_m_gh -->
-                        <div class="main_f_m_gh">
-
-                            <div class="search_mau_gh">
-                                <form>
-                                    <input class="inputsearch_mau_gh" type="text" value="Nhập từ khóa..." onBlur="if (this.value == '')
-                    this.value = 'Nhập từ khóa...';" onFocus="if (this.value == 'Nhập từ khóa...')
-                    this.value = '';"/>
-                                    <div style="padding-top:10px;">
-                                        <input class="inputgiatu_mau_gh" type="text" value="Giá từ" onBlur="if (this.value == '')
-                    this.value = 'Giá từ';" onFocus="if (this.value == 'Giá từ')
-                    this.value = '';"/>
-                                        <input class="inputgiaden_mau_gh" type="text" value="Giá đến" onBlur="if (this.value == '')
-                    this.value = 'Giá đến';" onFocus="if (this.value == 'Giá đến')
-                    this.value = '';"/>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="padding-top:10px;">
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="text-align:center; padding-top:10px;">
-                                        <input title="Tìm kiếm" class="btn_search" type="submit" value="&nbsp;"/>
-                                    </div>
-                                </form>
-                            </div><!-- End .search_mau_gh -->
-
-                        </div><!-- End .main_f_m_gh -->
-                    </div><!-- End .frame_mau_gh -->
-
-                </div><!-- End .right_mau_gh -->
+                <!-- begin right-->
+                <jsp:include page="subs/right.jsp"/>
+                <!-- end right -->
 
                 <div class="clear"></div>
 

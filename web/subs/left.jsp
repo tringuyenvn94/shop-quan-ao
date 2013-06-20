@@ -4,6 +4,11 @@
 <%@page import="dao.*" %> 
 <%@page import="pojo.*" %> 
 <%
+    int dmID = 0;
+    String strDM = request.getParameter("id");
+    if (strDM != null) {
+        dmID = Integer.parseInt(strDM);
+    }
     ArrayList<DanhMucPojo> dsDM = danhmucdao.layDanhMuc();         
 %>
 <!DOCTYPE html>
@@ -17,11 +22,17 @@
 
             <div class="dmsp_mau_gh">
                 <!-- begin menu items -->  
-                <%for(DanhMucPojo dm : dsDM){%>
+                <%for(DanhMucPojo dm : dsDM){
+                    if(dm.getMaDanhMuc() != dmID){%>
                 <div class="silverheader">
-                    <a href="" title="" onclick="changeDM(<%=dm.getMaDanhMuc()%>);"><%=dm.getTenDanhMuc()%></a>
+                    <a href="danhmuc.jsp?id=<%=dm.getMaDanhMuc()%>" title="" onclick="changeDM(<%=dm.getMaDanhMuc()%>);"><%=dm.getTenDanhMuc()%></a>
                 </div>
-                <%}%>
+                    <%}else{%>
+                    <div class="silverheaderCurrent">
+                    <a href="danhmuc.jsp?id=<%=dm.getMaDanhMuc()%>" title="" onclick="changeDM(<%=dm.getMaDanhMuc()%>);"><%=dm.getTenDanhMuc()%></a>
+                </div>
+                <%  }
+                }%>
                 
                 <!-- end menu items -->
                 
@@ -48,3 +59,8 @@
     </div><!-- End .frame_mau_gh --><!-- End .frame_mau_gh -->
 
 </div>
+                <script type="text/javascript">
+                    function changeDM(dmID){
+
+                    }
+                </script>

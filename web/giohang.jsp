@@ -1,26 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.io.*" %>
 <%@page import="java.util.*" %>
-<%@page import="dao.*" %> 
-<%@page import="pojo.*" %> 
-<%@page import="dao.util.Utility"%>
+<%@page import="dao.*" %>
+<%@page import="pojo.*" %>
 <%
-    int trang = 1;
-    int soLuongTrenTrang = 10;
-    String strTrang = request.getParameter("trang");
-    if (strTrang != null) {
-        trang = Integer.parseInt(strTrang);
+    GioHangPojo gioHang = new GioHangPojo();
+    if (session.getAttribute("GioHang") != null) {
+        gioHang = (GioHangPojo) session.getAttribute("GioHang");
     }
-
-    int soTrang = SPDao.tinhSoTrang(-1, soLuongTrenTrang);
-    request.setAttribute("trang", trang);
-    request.setAttribute("soTrang", soTrang);
-
-    ArrayList<SPPojo> dsSP = SPDao.layDanhSachSP(trang, 10);
-
-
     KhachHangPojo user = (KhachHangPojo) session.getAttribute("user");
-
 %>
 <!DOCTYPE html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,27 +21,6 @@
         <script type="text/javascript" src="js/ddaccordion.js"></script>
         <script type="text/javascript" src="js/jquery.bxSlider.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $('#slider1').bxSlider({
-                    auto: true,
-                    mode: 'fade',
-                    pager: true,
-                    controls: false
-                });
-            });
-        </script>
-
-        <script type="text/javascript">
-            function tick2() {
-                $('#ticker_02 li:first').slideUp(function() {
-                    $(this).appendTo($('#ticker_02')).slideDown();
-                });
-            }
-            setInterval(function() {
-                tick2()
-            }, 3000);
-        </script>
 
         <!--[if IE 6]>
         <script src="scripts/DD_belatedPNG_0.0.8a.js"></script>
@@ -87,11 +54,11 @@
 
 
                         <div class="cart">
-   
+
 
 
                             <div class="shop_name">
-                     
+
                                 <div class="rate_item"></div>
                                 <div class="online"></div>
                             </div>
@@ -129,18 +96,19 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                            <!-- begin sp -->
+                                            <%
+                                                        
+                                                        for (int i = 0; i < gioHang.getDsChiTiet().size(); i++) {
+                                                            ChiTietDonDatHangPojo ct = gioHang.getDsChiTiet().get(i);
+                                                            SPPojo sp = SPDao.laySP(ct.getMaSP());
+                                            %>
                                             <tr class="first last odd">
-                                                <td><a class="product-image" title="Giầy Cao Gót" href="#"><img width="75" height="75" alt="Giầy Cao Gót" src="http://media.sendo.vn/catalog/product/cache/1/thumbnail/75x/9df78eab33525d08d6e5fb8d27136e95/c/g/cg_0029_3__1_1.png"></a></td>
+                                                <td><a class="product-image" title="<%=sp.getTenSP()%>" href="#"><img width="75" height="75" alt="<%=sp.getTenSP()%>" src="<%=sp.getHinhAnh()%>"></a></td>
                                                 <td>
                                                     <h2 class="product-name">
-                                                        <a href="#">Giầy Cao Gót</a>
+                                                        <a href="chitietsanpham?id=<%=sp.getMaSP()%>"><%=sp.getTenSP()%></a>
                                                     </h2>
-                                                    <dl class="item-options">
-                                                        <dt>Kích thước</dt>
-                                                        <dd>Size 35                            </dd>
-                                                        <dt>Màu sắc</dt>
-                                                        <dd>Đen                            </dd>
-                                                    </dl>
                                                 </td>
                                                 <td class="a-center">
                                                     <input maxlength="12" class="input-text qty" title="Số lượng" size="4" value="1" onkeypress="return checkNumber(this, event)" name="cart[538175][qty]">
@@ -150,7 +118,7 @@
 
                                                 <td class="a-center">
                                                     <span class="cart-price">
-                                                        <span class="price">280,000&nbsp;VNĐ</span>                
+                                                        <span class="price"><%=sp.getGiaTien()%></span>                
                                                     </span>
 
 
@@ -159,12 +127,13 @@
 
                                                 <td class="a-center">
                                                     <span class="cart-price">
-
-                                                        <span class="price">280,000&nbsp;VNĐ</span>                            
+                                                        <span class="price"><%=ct.getGiaTien()%></span>                            
                                                     </span>
                                                 </td>
-                                                <td class="a-center last"><a class="btn-remove btn-remove2" title="Xóa sản phẩm" href="http://www.sendo.vn/checkout/cart/delete/id/538175/quoteId/431419/uenc/aHR0cDovL3d3dy5zZW5kby52bi9jaGVja291dC9jYXJ0Lw,,/">Xóa sản phẩm</a></td>
+                                                <td class="a-center last"><a class="btn-remove btn-remove2" title="Xóa sản phẩm" href="xulygiohang.jsp?act=xoaSP&idx=<%=i%>">Xóa sản phẩm</a></td>
                                             </tr>
+                                            <%}%>
+                                            <!-- end sp-->
                                         </tbody>
                                     </table>
                                     <script type="text/javascript">decorateTable('shopping-cart-table')</script>
@@ -190,7 +159,7 @@
                                                     Tổng cộng 
                                                 </td>
                                                 <td class="a-right" style="">
-                                                    <span class="price">280,000&nbsp;VNĐ</span>    </td>
+                                                    <span class="price"><%=gioHang.getGiaTien()%></span>    </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -205,47 +174,9 @@
                         </div>        <span id="fpcIdentifier"></span>   </div>
 
                 </div>
-                <div class="right_mau_gh">
-
-                    <!-- begin login -->
-                    <%if (user == null) {%>
-                    <jsp:include page="subs/loginRegion.jsp"/>
-                    <%}%>
-                    <!-- end login -->
-
-                    <div class="frame_mau_gh">
-                        <h2 class="title_f_m_gh">
-                            Tìm kiếm
-                        </h2><!-- End .title_f_m_gh -->
-                        <div class="main_f_m_gh">
-
-                            <div class="search_mau_gh">
-                                <form>
-                                    <input class="inputsearch_mau_gh" type="text" value="Nhập từ khóa..." onBlur="if (this.value == '')
-                    this.value = 'Nhập từ khóa...';" onFocus="if (this.value == 'Nhập từ khóa...')
-                    this.value = '';"/>
-                                    <div style="padding-top:10px;">
-                                        <input class="inputgiatu_mau_gh" type="text" value="Giá từ" onBlur="if (this.value == '')
-                    this.value = 'Giá từ';" onFocus="if (this.value == 'Giá từ')
-                    this.value = '';"/>
-                                        <input class="inputgiaden_mau_gh" type="text" value="Giá đến" onBlur="if (this.value == '')
-                    this.value = 'Giá đến';" onFocus="if (this.value == 'Giá đến')
-                    this.value = '';"/>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="padding-top:10px;">
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div style="text-align:center; padding-top:10px;">
-                                        <input title="Tìm kiếm" class="btn_search" type="submit" value="&nbsp;"/>
-                                    </div>
-                                </form>
-                            </div><!-- End .search_mau_gh -->
-
-                        </div><!-- End .main_f_m_gh -->
-                    </div><!-- End .frame_mau_gh -->
-
-                </div><!-- End .right_mau_gh -->
+                <!-- begin right-->
+                <jsp:include page="subs/right.jsp"/>
+                <!-- end right -->
 
                 <div class="clear"></div>
 

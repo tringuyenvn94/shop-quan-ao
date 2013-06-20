@@ -45,11 +45,13 @@ public class giohangdao {
             ct.setMaSP(tv.getMaSP());
             ct.setMaDonDatHang(gh.getDonDatHang().getMaDonDatHang());
             ct.setSoLuong(soLuong);
+            ct.setDonGia(donGia);
             gh.getDsChiTiet().add(ct);
             index = gh.getDsChiTiet().size() - 1;
         } else {
             ct = gh.getDsChiTiet().get(index);
             ct.setSoLuong(soLuong);
+            ct.setDonGia(donGia);
             gh.getDsChiTiet().set(index, ct);
         }
         if(user != null){
