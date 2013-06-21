@@ -277,6 +277,9 @@ body{
 #ticker_02{text-align:center;}
 #ticker_02 img{width:188px; height:165px;}
 #ticker_02 li{padding-bottom:2px;}
+.price{
+    color:#F00;
+}
 /************************************** END CONTENT ****************************************/
 
 /************************************** BEGIN FOOTER ***************************************/
@@ -731,4 +734,43 @@ button.button span span {
 }
 caption, th, td {
     font-weight: normal;
+}
+
+.button{
+    border-style: hidden;
+    background:#208FFF;
+    color:#FF0;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button:hover{
+    background:appworkspace;
+}
+#buttonTiepTuc{
+    float: left;
+    margin-left: 3px;
+}
+#buttonCapNhat{
+    float: right;
+    margin-right: 3px;
+}
+#buttonThanhToan{
+    margin-top:10px;
+}
+#dondathang{
+    position:relative;
+    display: none;
+}
+#btnChapNhan{
+    margin-top: 10px;
+    width: 300px;
+    float: left;
+    margin-left: 3px;
+}
+#btnClose{
+    margin-top: 10px;   
+    float: right;
+    margin-right: 3px;
 }

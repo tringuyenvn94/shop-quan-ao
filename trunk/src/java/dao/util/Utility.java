@@ -4,6 +4,9 @@
  */
 package dao.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author luctanbinh
@@ -27,5 +30,11 @@ public class Utility {
             temp = giaTien + temp;
         }
         return temp;
+    }
+    public static String getShortDate(Date d){
+        if(d == null)
+            return "";
+         SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy/MM/dd");
+         return dayFormat.format(d);
     }
 }

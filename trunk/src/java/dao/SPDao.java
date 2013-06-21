@@ -42,7 +42,7 @@ public class SPDao {
         MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
         try {
             helper.open();
-            String sql = String.format("select DonGia from SP where xoa = 0 and maSP = %d", ma);
+            String sql = String.format("select DonGia from SP where maSP = %d", ma);
             ResultSet rs = helper.executeQuery(sql);
             if (rs.next()) {
                 gia = rs.getFloat("DonGia");
@@ -388,7 +388,7 @@ public class SPDao {
             int n = (trang - 1) * soLuongTrenTrang;
             String sql;
             if (soLuongTrenTrang != -1) {
-                sql = String.format("select * from tv where xoa = 0 and matv in (select ct.matv from dondathang d, chitietdondathang ct where d.madondathang = ct.madonhang and d.matinhtrang=2) limit %d, %d", n, soLuongTrenTrang);
+                sql = String.format("select * from tv where matv in (select ct.matv from dondathang d, chitietdondathang ct where d.madondathang = ct.madonhang and d.matinhtrang=2) limit %d, %d", n, soLuongTrenTrang);
             } else {
                 sql = "select * from tv where matv in (select ct.matv from dondathang d, chitietdondathang ct where d.madondathang = ct.madonhang and d.matinhtrang=2)" ;
             }

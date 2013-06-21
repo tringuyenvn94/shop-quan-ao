@@ -21,6 +21,7 @@ public class SPPojo {
     private String tenNhaSX;
     private String giaTien;
     private int soLuong;
+    private Date ngayNhap;
 
     public String getShortMoTa(){
         int l = 100;
@@ -153,6 +154,20 @@ public class SPPojo {
      */
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
+    }
+
+    /**
+     * @return the ngayNhap
+     */
+    public Date getNgayNhap() {
+        return ngayNhap;
+    }
+
+    /**
+     * @param ngayNhap the ngayNhap to set
+     */
+    public void setNgayNhap(Date ngayNhap) {
+        this.ngayNhap = ngayNhap;
     }
 
 }
