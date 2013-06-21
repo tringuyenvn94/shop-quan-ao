@@ -10,7 +10,7 @@
 <%@page import="dao.*" %>
 <%@page import="pojo.*" %>
 <%
-    KhachHangPojo user = (KhachHangPojo) session.getAttribute("User");
+    KhachHangPojo user = (KhachHangPojo) session.getAttribute("user");
     SPPojo sp = new SPPojo();
     String ma = request.getParameter("id");
     int maSP = 0;

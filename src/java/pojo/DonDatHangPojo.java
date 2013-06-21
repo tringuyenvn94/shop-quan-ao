@@ -5,6 +5,7 @@
 package pojo;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -14,21 +15,37 @@ import java.util.Date;
 public class DonDatHangPojo {
 
     private int maDonDatHang;
-    private String ngayDatHang;
-    private String ngayGiaoHang;
+    private Date ngayDatHang;
+    private Date ngayGiaoHang;
     private String maKhachHang;
     private float giaTri;
     private int maTinhTrang;
-
+    private String tenNguoiNhan;
+    private String soDTNguoiNhan;
+    private String diaChiNguoiNhan;
+    
     public DonDatHangPojo() {
         //Lay gio he thong
-        Date todayD = new Date(System.currentTimeMillis());
+//        Date todayD = new Date(System.currentTimeMillis());
+//
+//        //Khai bao dinh dang ngay thang
+//        SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
+//
+//        //parse ngay thang sang dinh dang va chuyen thanh string.
+//        ngayDatHang = dayFormat.format(todayD.getTime());
+        Calendar c = Calendar.getInstance();
+        ngayDatHang = c.getTime();
+        maTinhTrang = 1;
+    }
 
-        //Khai bao dinh dang ngay thang
-        SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-        //parse ngay thang sang dinh dang va chuyen thanh string.
-        ngayDatHang = dayFormat.format(todayD.getTime());
+    public DonDatHangPojo(String maKhachHang, float giaTri, String tenNguoiNhan, String soDTNguoiNhan, String diaChiNguoiNhan) {
+        this.maKhachHang = maKhachHang;
+        this.giaTri = giaTri;
+        this.tenNguoiNhan = tenNguoiNhan;
+        this.soDTNguoiNhan = soDTNguoiNhan;
+        this.diaChiNguoiNhan = diaChiNguoiNhan;
+        Calendar c = Calendar.getInstance();
+        ngayDatHang = c.getTime();
         maTinhTrang = 1;
     }
 
@@ -49,14 +66,14 @@ public class DonDatHangPojo {
     /**
      * @return the ngayDatHang
      */
-    public String getNgayDatHang() {
+    public Date getNgayDatHang() {
         return ngayDatHang;
     }
 
     /**
      * @param ngayDatHang the ngayDatHang to set
      */
-    public void setNgayDatHang(String ngayDatHang) {
+    public void setNgayDatHang(Date ngayDatHang) {
         this.ngayDatHang = ngayDatHang;
     }
 
@@ -91,14 +108,14 @@ public class DonDatHangPojo {
     /**
      * @return the ngayGiaoHang
      */
-    public String getNgayGiaoHang() {
+    public Date getNgayGiaoHang() {
         return ngayGiaoHang;
     }
 
     /**
      * @param ngayGiaoHang the ngayGiaoHang to set
      */
-    public void setNgayGiaoHang(String ngayGiaoHang) {
+    public void setNgayGiaoHang(Date ngayGiaoHang) {
         this.ngayGiaoHang = ngayGiaoHang;
     }
 
@@ -114,5 +131,47 @@ public class DonDatHangPojo {
      */
     public void setGiaTri(float donGia) {
         this.giaTri = donGia;
+    }
+
+    /**
+     * @return the tenNguoiNhan
+     */
+    public String getTenNguoiNhan() {
+        return tenNguoiNhan;
+    }
+
+    /**
+     * @param tenNguoiNhan the tenNguoiNhan to set
+     */
+    public void setTenNguoiNhan(String tenNguoiNhan) {
+        this.tenNguoiNhan = tenNguoiNhan;
+    }
+
+    /**
+     * @return the soDTNguoiNhan
+     */
+    public String getSoDTNguoiNhan() {
+        return soDTNguoiNhan;
+    }
+
+    /**
+     * @param soDTNguoiNhan the soDTNguoiNhan to set
+     */
+    public void setSoDTNguoiNhan(String soDTNguoiNhan) {
+        this.soDTNguoiNhan = soDTNguoiNhan;
+    }
+
+    /**
+     * @return the diaChiNguoiNhan
+     */
+    public String getDiaChiNguoiNhan() {
+        return diaChiNguoiNhan;
+    }
+
+    /**
+     * @param diaChiNguoiNhan the diaChiNguoiNhan to set
+     */
+    public void setDiaChiNguoiNhan(String diaChiNguoiNhan) {
+        this.diaChiNguoiNhan = diaChiNguoiNhan;
     }
 }

@@ -50,11 +50,11 @@ public class thanhtoancontroller extends HttpServlet {
                 if (session.getAttribute("gioHang") != null) {
                     gioHang = (GioHangPojo) session.getAttribute("gioHang");
                 }
-                if (user != null) {
-                    dondathangdao.thanhToan(gioHang.getDonDatHang().getMaDonDatHang());
-                } else {
-                    chitietdondathangdao.themDSChiTietDonDatHang(gioHang.getDsChiTiet(), user);
-                }
+//                if (user != null) {
+//                    dondathangdao.thanhToan(gioHang.getDonDatHang().getMaDonDatHang());
+//                } else {
+//                    chitietdondathangdao.themDSChiTietDonDatHang(gioHang.getDsChiTiet(), user);
+//                }
                 session.setAttribute("gioHang", null);
                 RequestDispatcher view = request.getRequestDispatcher("index.jsp");
                 view.forward(request, response);

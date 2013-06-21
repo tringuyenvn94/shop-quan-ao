@@ -28,7 +28,7 @@ public class xulydatmua {
             tv = SPDao.laySP(maSP);
         }
 
-        GioHangPojo gioHang = new GioHangPojo(user);
+        GioHangPojo gioHang = new GioHangPojo();
         if (session.getAttribute("gioHang") != null) {
             gioHang = (GioHangPojo) session.getAttribute("gioHang");
         }

@@ -5,9 +5,11 @@
 package dao;
 
 import dao.util.MySqlDataAccessHelper;
+import dao.util.Utility;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import pojo.DonDatHangPojo;
+import pojo.GioHangPojo;
 
 /**
  *
@@ -17,7 +19,7 @@ public class dondathangdao {
     public static DonDatHangPojo layDonHang(int ma){
         DonDatHangPojo don = new DonDatHangPojo();
         try {
-            String sql = String.format("select * from DonDatHang where Xoa = 0 and MaDonDatHang=%d",ma);
+            String sql = String.format("select * from DonDatHang where MaDonDatHang=%d",ma);
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             ResultSet rs = helper.executeQuery(sql);
@@ -25,8 +27,8 @@ public class dondathangdao {
                 don.setMaDonDatHang(rs.getInt("MaDonDatHang"));
                 don.setMaKhachHang(rs.getString("MaKhachHang"));
                 don.setMaTinhTrang(rs.getInt("MaTinhTrang"));
-                don.setNgayDatHang(rs.getString("NgayDatHang"));
-                don.setNgayGiaoHang(rs.getString("NgayGiao"));
+                don.setNgayDatHang(rs.getDate("NgayDatHang"));
+                don.setNgayGiaoHang(rs.getDate("NgayGiao"));
                 don.setGiaTri(rs.getFloat("GiaTri"));
                 
             }
@@ -39,7 +41,7 @@ public class dondathangdao {
     public static DonDatHangPojo layDonHang(String maKhachHang){
         DonDatHangPojo don = new DonDatHangPojo();
         try {
-            String sql = String.format("select * from DonDatHang where Xoa = 0 and MaKhachHang='%s'",maKhachHang);
+            String sql = String.format("select * from DonDatHang where MaKhachHang='%s'",maKhachHang);
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             ResultSet rs = helper.executeQuery(sql);
@@ -47,8 +49,8 @@ public class dondathangdao {
                 don.setMaDonDatHang(rs.getInt("MaDonDatHang"));
                 don.setMaKhachHang(rs.getString("MaKhachHang"));
                 don.setMaTinhTrang(rs.getInt("MaTinhTrang"));
-                don.setNgayDatHang(rs.getString("NgayDatHang"));
-                don.setNgayGiaoHang(rs.getString("NgayGiao"));
+                don.setNgayDatHang(rs.getDate("NgayDatHang"));
+                don.setNgayGiaoHang(rs.getDate("NgayGiao"));
                 don.setGiaTri(rs.getFloat("GiaTri"));
             }
             helper.close();
@@ -76,7 +78,7 @@ public class dondathangdao {
     public static ArrayList<DonDatHangPojo> layDSDonHang(String maKhachHang){
         ArrayList<DonDatHangPojo> ds = new ArrayList<DonDatHangPojo>();
         try {
-            String sql = String.format("select * from DonDatHang where Xoa = 0 and MaKhachHang='%s'",maKhachHang);
+            String sql = String.format("select * from DonDatHang where MaKhachHang='%s'",maKhachHang);
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             ResultSet rs = helper.executeQuery(sql);
@@ -85,8 +87,8 @@ public class dondathangdao {
                 don.setMaDonDatHang(rs.getInt("MaDonDatHang"));
                 don.setMaKhachHang(rs.getString("MaKhachHang"));
                 don.setMaTinhTrang(rs.getInt("MaTinhTrang"));
-                don.setNgayDatHang(rs.getString("NgayDatHang"));
-                don.setNgayGiaoHang(rs.getString("NgayGiao"));
+                don.setNgayDatHang(rs.getDate("NgayDatHang"));
+                don.setNgayGiaoHang(rs.getDate("NgayGiao"));
                 don.setGiaTri(rs.getFloat("GiaTri"));
                 ds.add(don);
             }
@@ -96,18 +98,22 @@ public class dondathangdao {
         }
         return ds;
     }
-    public static boolean themDonDatHang(DonDatHangPojo don){
+    public static int themDonDatHang(DonDatHangPojo don){
         try {
-            String sql = String.format("INSERT INTO `shopquanao`.`dondathang` (`MaDonDatHang`, `NgayDatHang`, `NgayGiao`, `GiaTri` `MaKhachHang`, `MaTinhTrang`, `Xoa`) VALUES (%d, '%s', '%s', '%s', 0)",
-                                        don.getMaDonDatHang(), don.getNgayDatHang(),don.getNgayGiaoHang(), don.getGiaTri(), don.getMaKhachHang(), don.getMaTinhTrang());
+            String sql = String.format("INSERT INTO `shopquanao`.`dondathang` (`NgayDatHang`, `GiaTri`, `MaKhachHang`, `MaTinhTrang`, `TenNguoiNhan`, `SoDTNguoiNhan`, `DiaChiNguoiNhan`, `Xoa`) VALUES ('%s', %f, '%s', %d, '%s', '%s', '%s', 0)",
+                                        Utility.getShortDate(don.getNgayDatHang()), don.getGiaTri(), don.getMaKhachHang(), don.getMaTinhTrang(), don.getTenNguoiNhan(), don.getSoDTNguoiNhan(), don.getDiaChiNguoiNhan());
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             helper.executeUpdate(sql);
+            sql = "select max(`MaDonDatHang`) as id from `shopquanao`.`dondathang`";
+             ResultSet rs = helper.executeQuery(sql);
+             rs.next();
+             int id = rs.getInt("id");
             helper.close();
+            return id;
         } catch (Exception e) {
-            return false;
+            return -1;
         }
-        return true;
     }
     public static boolean thanhToan(int maDH){
         try {

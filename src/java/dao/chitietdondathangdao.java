@@ -20,7 +20,7 @@ public class chitietdondathangdao {
     public static ArrayList<ChiTietDonDatHangPojo> layChiTietDonHang(int ma) {
         ArrayList<ChiTietDonDatHangPojo> lst = new ArrayList<ChiTietDonDatHangPojo>();
         try {
-            String sql = String.format("select * from ChiTietDonDatHang where Xoa = 0 and MaChiTiet = %d", ma);
+            String sql = String.format("select * from ChiTietDonDatHang where MaChiTiet = %d", ma);
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             ResultSet rs = helper.executeQuery(sql);
@@ -54,21 +54,15 @@ public class chitietdondathangdao {
         return ctDon;
     }
 
-    public static void themDSChiTietDonDatHang(ArrayList<ChiTietDonDatHangPojo> ctDon, KhachHangPojo User) {
+    public static void themDSChiTietDonDatHang(ArrayList<ChiTietDonDatHangPojo> ctDon) {
         try {
 
             String sql = "";
-            if (User != null) {
                 for (int i = 0; i < ctDon.size(); i++) {
                     sql += String.format("INSERT INTO `shopquanao`.`chitietdondathang` (`MaDonHang`, `MaSP`, `SoLuong`, `Xoa`) VALUES (%d, %d, %d, 0)",
                             ctDon.get(i).getMaDonDatHang(), ctDon.get(i).getMaSP(), ctDon.get(i).getSoLuong()) + ";";
                 }
-            } else {
-                for (int i = 0; i < ctDon.size(); i++) {
-                    sql += String.format("INSERT INTO `shopquanao`.`chitietdondathang` (`MaDonHang`, `MaSP`, `SoLuong`, `Xoa`) VALUES (1, %d, %d, 0)",
-                            ctDon.get(i).getMaSP(), ctDon.get(i).getSoLuong()) + ";";
-                }
-            }
+           
 
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
