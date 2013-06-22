@@ -38,22 +38,13 @@
                 $('#slider1').bxSlider({
                     auto: true,
                     mode: 'fade',
-                    pager: true,
+                    pager: false,
                     controls: false
                 });
             });
         </script>
         
-        <script type="text/javascript">
-            function tick2() {
-                $('#ticker_02 li:first').slideUp(function() {
-                    $(this).appendTo($('#ticker_02')).slideDown();
-                });
-            }
-            setInterval(function() {
-                tick2()
-            }, 3000);
-        </script>
+        
 
         <!--[if IE 6]>
         <script src="scripts/DD_belatedPNG_0.0.8a.js"></script>
