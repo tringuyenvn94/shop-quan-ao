@@ -4,6 +4,8 @@
  */
 package dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import pojo.*;
 
 /**
@@ -85,5 +87,20 @@ public class giohangdao {
             gh.getDsChiTiet().get(i).setMaDonDatHang(id);
         }        
         chitietdondathangdao.themDSChiTietDonDatHang(gh.getDsChiTiet());
+        
+        List<Integer> lstID = layDSSanPham(gh);
+        List<SPPojo> lstSP = SPDao.layDSSP(lstID);
+        for(int i = 0; i < gh.getDsChiTiet().size(); i++){
+            int soLuongTon = lstSP.get(i).getSoLuongTon() - gh.getDsChiTiet().get(i).getSoLuong();
+            lstSP.get(i).setSoLuongTon(soLuongTon);
+        }
+        SPDao.capNhatDSSP(lstSP);
+    }
+    private static List<Integer> layDSSanPham(GioHangPojo gh){
+        List<Integer> rs = new ArrayList<Integer>();
+        for(int i = 0; i < gh.getDsChiTiet().size(); i++){
+            rs.add(gh.getDsChiTiet().get(i).getMaSP());
+        }
+        return rs;
     }
 }

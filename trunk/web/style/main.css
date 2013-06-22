@@ -62,7 +62,7 @@ body{
 /************************************** BEGIN CONTENT **************************************/
 #content_mau_gh{padding:10px 5px 0 5px;}
 .left_c_mau_gh{width:200px; float:left; padding-right:10px;}
-.center_c_mau_gh{width:570px; float:left; margin-bottom:5px;}
+.center_c_mau_gh{width:570px; float:left; margin-bottom:20px;}
 .right_mau_gh{width:200px; float:right; padding-left:10px;}
 .frame_mau_gh{padding-bottom:10px;}
 .title_f_m_gh{
@@ -188,8 +188,9 @@ body{
 	background:url(../imgs/layout10/slide_mau_g.jpg) repeat-x bottom; 
 	overflow:hidden;
 	margin-bottom:10px;
+        background-color:#3B1058;
 }
-.multiple img{width:558px; height:234px; padding:5px 5px 0 5px;}
+.multiple img{width:400px; height:234px; padding:5px 5px 5px 5px;}
 /*pager links*/
 .bx-pager a {
 	margin-right: 5px;

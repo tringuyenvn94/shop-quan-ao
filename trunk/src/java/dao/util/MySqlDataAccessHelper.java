@@ -89,4 +89,13 @@ public class MySqlDataAccessHelper {
       }
       return num;
    }
+   
+    public void executeInsert(String sql) {
+      try {
+         Statement sm = this.connection.createStatement();
+         sm.execute(sql);
+      } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+      }
+   }
 }

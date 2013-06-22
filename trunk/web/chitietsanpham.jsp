@@ -54,7 +54,7 @@
                             <div class="header_info">
                                 <div class="header_info_left">
                                     <div class="flexslider">
-                                        <img width="405" height="506" title="<%=sp.getTenSP()%>" alt="<%=sp.getTenSP()%>" src="<%=sp.getHinhAnh()%>" class="clsImage" original="<%=sp.getHinhAnh()%>" style="">
+                                        <img width="300" height="370" title="<%=sp.getTenSP()%>" alt="<%=sp.getTenSP()%>" src="<%=sp.getHinhAnh()%>" class="clsImage" original="<%=sp.getHinhAnh()%>" style="">
                                     </div>
                                     <div class="info_left_type_1 dealtype"></div>
                                 </div>
@@ -83,34 +83,23 @@
                                             <div class="item_detail_info">
 
                                                 <script type="text/javascript">
-                                                    $(document).ready(function() {
-                                                        $('div.detail_info_content&gt; div').hide();
-                                                        $('div.detail_info_content&gt; b').next('div').show();
-                                                        $('div.detail_info_content&gt; strong').click(function() {
-                                                            $(this).next('div').slideToggle(0);
-                                                            //.siblings('div:visible').slideUp(0);
-
-                                                            if ($(this).hasClass('open')) {
-                                                                $(this).removeClass('open');
-                                                            }
-                                                            else {
-                                                                //$('div.detail_info_content&gt; h3').removeClass('open');
-                                                                $(this).addClass('open');
-                                                            }
-                                                        });
-                                                    });
+                                                    function toggleContent(){
+                                                        $('#noiDungSP').toggle(500);
+                                                    }
+                                                       
                                                 </script>
 
                                                 <div class="detail_info_content">
-                                                    <b class="term_header"><a title="" href="javascript:void(0);">THÔNG TIN THÊM</a></b>
-                                                    <div class="detail_content" style="display: block;">
+                                                    <b class="term_header"><a title="" href="#" onclick="toggleContent();">THÔNG TIN THÊM</a></b>
+                                                    <div id ="noiDungSP" class="detail_content" style="display: block;">
                                                        <!-- nội dung content -->
+                                                       <%=sp.getMoTa()%>>
                                                     </div>
 
                                                     <p class="clear_line"></p>
 
                                                     <p class="buy_center_button_box">
-                                                        <a name="popup_buy_center" class="buy_center_button" title="" href="javascript:void(0);"></a>
+                                                        <a name="popup_buy_center" class="buy_center_button" title="" href="xulydatmua.jsp?id=<%=sp.getMaSP()%>"></a>
                                                     </p>
 
                                                     <p class="clear_line"></p>

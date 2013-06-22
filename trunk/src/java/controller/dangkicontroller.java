@@ -38,7 +38,6 @@ public class dangkicontroller extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             HttpSession session = request.getSession();
-            request = maincontrol.processRequest(request);
             
             session.setAttribute("trangHienTai", "/dangki");
 

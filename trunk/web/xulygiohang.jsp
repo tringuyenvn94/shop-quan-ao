@@ -14,6 +14,7 @@
     KhachHangPojo user = (KhachHangPojo) session.getAttribute("user");
     GioHangPojo gh = (GioHangPojo) session.getAttribute("GioHang");
     String act = request.getParameter("act");
+    String url = "giohang.jsp";
     if (act.equals("xoaSP")) {
         String strIndex = request.getParameter("idx");
         int index = Integer.parseInt(strIndex);
@@ -45,11 +46,12 @@
         String dienThoai = request.getParameter("txtDienThoai");
         String diaChi = request.getParameter("txtDiaChi");
         
+        
         giohangdao.thanhToan(gh, user, hoTen, dienThoai, diaChi);
         
-        session.setAttribute("GioHang", null);
-        response.sendRedirect("index.jsp");
+        gh = null;
+        url = "index.jsp";
     }
     session.setAttribute("GioHang", gh);
-    response.sendRedirect("giohang.jsp");
+    response.sendRedirect(url);
 %>

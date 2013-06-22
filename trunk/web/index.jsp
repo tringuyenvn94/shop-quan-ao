@@ -12,11 +12,11 @@
         trang = Integer.parseInt(strTrang);
     }
 
-    int soTrang = SPDao.tinhSoTrang(-1, soLuongTrenTrang);
+    int soTrang = SPDao.tinhSoTrangDSSPBanChay(soLuongTrenTrang);
     request.setAttribute("trang", trang);
     request.setAttribute("soTrang", soTrang);
     
-    ArrayList<SPPojo> dsSP = SPDao.layDanhSachSP(trang, 10);
+    ArrayList<SPPojo> dsSP = SPDao.layDSSPBanChay(trang, 10);
     request.setAttribute("dsSP", dsSP);
     
     request.setAttribute("trangHienTai", "index.jsp?");
@@ -86,7 +86,7 @@
                     <div class="slide_mau_g">
                         <ul id="slider1" class="multiple">
                             <%for(SPPojo sp : dsSP){%>
-                            <li><img src="<%=sp.getHinhAnh()%>" alt=""/></li>
+                            <li><img style="margin-left: 90px;" src="<%=sp.getHinhAnh()%>" alt=""/></li>
                             <%}%>
                         </ul>
                     </div>

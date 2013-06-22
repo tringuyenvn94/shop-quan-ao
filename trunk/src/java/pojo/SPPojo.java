@@ -13,15 +13,15 @@ import java.util.*;
 public class SPPojo {
     private int maSP;
     private String tenSP;
-    private int nhaSX;
+    private int maDM;
     private String moTa;
     private int soLuongTon;
     private float giaBan;
     private String hinhAnh;
-    private String tenNhaSX;
     private String giaTien;
     private int soLuong;
     private Date ngayNhap;
+    private int maKhuyenMai;
 
     public String getShortMoTa(){
         int l = 100;
@@ -29,6 +29,19 @@ public class SPPojo {
             l = moTa.length();
         }
         return moTa.substring(0, l);
+    }
+
+    public SPPojo(){
+    
+    }
+    public SPPojo(int maDM, String tenSP, String moTa, float giaBan, String hinhAnh, int soLuong) {
+        this.tenSP = tenSP;
+        this.moTa = moTa;
+        this.giaBan = giaBan;
+        this.hinhAnh = hinhAnh;
+        this.soLuong = soLuong;
+        this.maDM = maDM;
+        this.ngayNhap = Calendar.getInstance().getTime();
     }
     /**
      * @return the maSP
@@ -61,15 +74,15 @@ public class SPPojo {
     /**
      * @return the nhaSX
      */
-    public int getNhaSX() {
-        return nhaSX;
+    public int getMaDM() {
+        return maDM;
     }
 
     /**
      * @param nhaSX the nhaSX to set
      */
-    public void setNhaSX(int nhaSX) {
-        this.nhaSX = nhaSX;
+    public void setMaDM(int maDM) {
+        this.maDM = maDM;
     }
 
     /**
@@ -129,13 +142,6 @@ public class SPPojo {
     }
 
     /**
-     * @return the tenNhaSX
-     */
-    public String getTenNhaSX() {
-        return SPDao.layTenNhaSanXuat(this.nhaSX);
-    }
-
-    /**
      * @return the giaTien
      */
     public String getGiaTien() {
@@ -168,6 +174,20 @@ public class SPPojo {
      */
     public void setNgayNhap(Date ngayNhap) {
         this.ngayNhap = ngayNhap;
+    }
+
+    /**
+     * @return the maKhuyenMai
+     */
+    public int getMaKhuyenMai() {
+        return maKhuyenMai;
+    }
+
+    /**
+     * @param maKhuyenMai the maKhuyenMai to set
+     */
+    public void setMaKhuyenMai(int maKhuyenMai) {
+        this.maKhuyenMai = maKhuyenMai;
     }
 
 }
