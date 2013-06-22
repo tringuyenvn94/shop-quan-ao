@@ -92,7 +92,7 @@
               </tr>
               <%}%>
               <tr>
-                <td><input type="submit" name="btnOk1" id="btnOk1" value="Submit"></td>
+                <td><input type="submit" name="btnOk1" id="btnOk1" value="OK"></td>
                 <td>&nbsp;</td>
               </tr>
               
@@ -146,7 +146,7 @@
               </tr>
               <%}%>
               <tr>
-                <td><input type="submit" name="btnOk2" id="btnOk2" value="Submit"></td>
+                <td><input type="submit" name="btnOk2" id="btnOk2" value="OK"></td>
                 <td>&nbsp;</td>
               </tr>
               

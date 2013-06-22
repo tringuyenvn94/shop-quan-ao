@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <div id="footer_mau_gh">
     <div class="menu_footer">
-        <span><a href="#" title="">Trang chủ</a></span>
+        <span><a href="index.jsp" title="">Trang chủ</a></span>
         <span>|</span>
-        <span><a href="#" title="">Sản phẩm</a></span>
+        <span><a href="sanphammoi.jsp?mnu=1" title="">Sản phẩm mới</a></span>
         <span>|</span>
-        <span><a href="#" title="">Khuyến mãi</a></span>
+        <span><a href="spkhuyenmai.jsp?mnu=2" title="">Khuyến mãi</a></span>
         <span>|</span>               
-        <span><a href="#" title="">Liên hệ</a></span>
+        <span><a href="lienhe.jsp?mnu=4" title="">Liên hệ</a></span>
     </div><!-- End .menu_footer -->
     <div class="info_footer">
         Copyright © 2011 giaydior.com. All rights reserved.<br />
