@@ -1,9 +1,3 @@
-<%-- 
-    Document   : chitietsanpham
-    Created on : Jun 19, 2013, 10:41:40 AM
-    Author     : NMS
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.io.*" %>
 <%@page import="java.util.*" %>
