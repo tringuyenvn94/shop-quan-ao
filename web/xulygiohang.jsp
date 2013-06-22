@@ -1,8 +1,3 @@
-<%-- 
-    Document   : xulygiohang
-    Created on : Jun 20, 2013, 1:21:59 AM
-    Author     : luctanbinh
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.io.*" %>

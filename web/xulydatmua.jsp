@@ -1,8 +1,4 @@
-<%-- 
-    Document   : xulydatmua
-    Created on : Jun 20, 2013, 12:58:18 AM
-    Author     : luctanbinh
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.io.*" %>
