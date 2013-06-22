@@ -13,6 +13,15 @@ public class DanhMucPojo {
     private String tenDanhMuc;
     private String xuatXu;
 
+    public DanhMucPojo(){
+        
+    }
+            
+    public DanhMucPojo(String ten, String xuatXu) {
+        tenDanhMuc = ten;
+        this.xuatXu = xuatXu;
+    }
+
     /**
      * @return the maDanhMuc
      */

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : dangky
-    Created on : Jun 18, 2013, 2:35:24 AM
-    Author     : luctanbinh
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
    String error =(String) request.getAttribute("error");
@@ -48,12 +42,12 @@
       <tr style="height:30px;">
         <td>Mật khẩu</td>
         <td><label for="txtMatKhau"></label>
-          <input id="txtMatKhau" class="regInput" type="text" name="txtMatKhau"  /></td>
+            <input id="txtMatKhau" class="regInput" type="password" name="txtMatKhau"  /></td>
       </tr>
       <tr style="height:30px;">
         <td>Nhập lại mật khẩu</td>
         <td><label for="txtMatKhau2"></label>
-          <input id="txtMatKhau2" class="regInput" type="text" name="txtMatKhau2"  /></td>
+          <input id="txtMatKhau2" class="regInput" type="password" name="txtMatKhau2"  /></td>
       </tr>
       <tr style="height:30px;">
         <td>Email</td>

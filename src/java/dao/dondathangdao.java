@@ -100,8 +100,8 @@ public class dondathangdao {
     }
     public static int themDonDatHang(DonDatHangPojo don){
         try {
-            String sql = String.format("INSERT INTO `shopquanao`.`dondathang` (`NgayDatHang`, `GiaTri`, `MaKhachHang`, `MaTinhTrang`, `TenNguoiNhan`, `SoDTNguoiNhan`, `DiaChiNguoiNhan`, `Xoa`) VALUES ('%s', %f, '%s', %d, '%s', '%s', '%s', 0)",
-                                        Utility.getShortDate(don.getNgayDatHang()), don.getGiaTri(), don.getMaKhachHang(), don.getMaTinhTrang(), don.getTenNguoiNhan(), don.getSoDTNguoiNhan(), don.getDiaChiNguoiNhan());
+            String sql = String.format("INSERT INTO `shopquanao`.`dondathang` (`NgayDatHang`,`NgayGiao`, `GiaTri`, `MaKhachHang`, `MaTinhTrang`, `TenNguoiNhan`, `SoDTNguoiNhan`, `DiaChiNguoiNhan`, `Xoa`) VALUES ('%s','%s', %f, '%s', %d, '%s', '%s', '%s', 0)",
+                                        Utility.getShortDate(don.getNgayDatHang()),Utility.getShortDate(don.getNgayDatHang()), don.getGiaTri(), don.getMaKhachHang(), don.getMaTinhTrang(), don.getTenNguoiNhan(), don.getSoDTNguoiNhan(), don.getDiaChiNguoiNhan());
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
             helper.executeUpdate(sql);

@@ -35,7 +35,7 @@ public class DonDatHangPojo {
 //        ngayDatHang = dayFormat.format(todayD.getTime());
         Calendar c = Calendar.getInstance();
         ngayDatHang = c.getTime();
-        maTinhTrang = 1;
+        maTinhTrang = 2;
     }
 
     public DonDatHangPojo(String maKhachHang, float giaTri, String tenNguoiNhan, String soDTNguoiNhan, String diaChiNguoiNhan) {
@@ -46,7 +46,7 @@ public class DonDatHangPojo {
         this.diaChiNguoiNhan = diaChiNguoiNhan;
         Calendar c = Calendar.getInstance();
         ngayDatHang = c.getTime();
-        maTinhTrang = 1;
+        maTinhTrang = 2;
     }
 
     /**

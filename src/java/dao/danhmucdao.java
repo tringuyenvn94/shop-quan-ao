@@ -66,4 +66,17 @@ public class danhmucdao {
         }
         return tenDM;
     }
+    public static boolean themDanhMuc(String ten, String xuatXu){
+        try {
+            String sql = String.format("INSERT INTO DanhMuc (TenDanhMuc, XuatXu) Values('%s', '%s');",
+                                       ten, xuatXu);
+            MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
+            helper.open();
+            helper.executeUpdate(sql);
+            helper.close();
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 }

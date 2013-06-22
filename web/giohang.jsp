@@ -40,12 +40,14 @@
             <jsp:include page="subs/header.jsp"/>
             <!-- End header -->
 
+            
             <div id="content_mau_gh">
 
                 <!-- beginleft -->
                 <jsp:include page="subs/left.jsp"/>
                 <!-- endleft -->
 
+                
                 <!-- begin don dat hang -->
                 <div id="dondathang">
                     <div class="center_c_mau_gh">
@@ -215,6 +217,7 @@
                             </div>        <span id="fpcIdentifier"></span>   </div>
 
                     </div>
+                
                     <!-- end gio hang -->
                     <!-- begin right-->
                     <jsp:include page="subs/right.jsp"/>

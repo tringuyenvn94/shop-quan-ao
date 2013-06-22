@@ -57,12 +57,12 @@ public class chitietdondathangdao {
     public static void themDSChiTietDonDatHang(ArrayList<ChiTietDonDatHangPojo> ctDon) {
         try {
 
-            String sql = "";
+            String sql = "INSERT INTO `shopquanao`.`chitietdondathang` (`MaDonHang`, `MaSP`, `SoLuong`, `Xoa`) VALUES ";
                 for (int i = 0; i < ctDon.size(); i++) {
-                    sql += String.format("INSERT INTO `shopquanao`.`chitietdondathang` (`MaDonHang`, `MaSP`, `SoLuong`, `Xoa`) VALUES (%d, %d, %d, 0)",
-                            ctDon.get(i).getMaDonDatHang(), ctDon.get(i).getMaSP(), ctDon.get(i).getSoLuong()) + ";";
+                    sql += String.format("(%d, %d, %d, 0), ",
+                            ctDon.get(i).getMaDonDatHang(), ctDon.get(i).getMaSP(), ctDon.get(i).getSoLuong());
                 }
-           
+                sql = sql.substring(0, sql.length()-2);
 
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();

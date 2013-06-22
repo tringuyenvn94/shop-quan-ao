@@ -21,7 +21,13 @@
                 <!-- begin list sp -->
                 <%for (SPPojo sp : dsSP) {%>
                 <li>
+                   <%if(sp.getMaKhuyenMai() > 0){
+                       KhuyenMaiPojo km = KhuyenMaiDao.layKhuyenMai(sp.getMaKhuyenMai());
+                   %>
+                    <a href="chitietsanpham.jsp?id=<%=sp.getMaSP()%>"><img src="<%=sp.getHinhAnh()%>" title="<%=km.getNoiDung()%>"/></a>
+                    <%}else{%>
                     <a href="chitietsanpham.jsp?id=<%=sp.getMaSP()%>"><img src="<%=sp.getHinhAnh()%>" title="<%=sp.getShortMoTa()%>"/></a>
+                    <%}%>
                     <h2 class="title_prod_news">
                         <a href="#" title=""><%=sp.getTenSP()%></a>
                     </h2>

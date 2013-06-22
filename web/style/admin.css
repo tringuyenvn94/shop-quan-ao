@@ -429,3 +429,9 @@ div.table .select select {
 .toggleButton:hover{
 	background-color:#FFF;
 }
+.bold{
+    font-weight: bold;
+}
+.cart-price{
+    color: #CC0000;
+}
