@@ -24,9 +24,8 @@
 <div class="right_mau_gh">
 
     <!-- begin login -->
-    <%if (user == null) {%>
+
     <jsp:include page="loginRegion.jsp"/>
-    <%}%>
     <!-- end login -->
 
     <div class="frame_mau_gh">

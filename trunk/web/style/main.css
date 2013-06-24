@@ -268,6 +268,10 @@ body{
 .title_prod_news a:hover{text-decoration:underline;}
 .price_prod_mau_gh{color:#cc0000;}
 .dnhap_mau_gh{padding:5px;}
+#dangnhap{
+    margin: 0 auto;
+    min-height: 40px;
+}
 #dangnhap #form1 p #user {
 	margin-left: 10px;
 }
@@ -382,7 +386,7 @@ body{
 	margin-top:13px;
 	margin-right:10px;
 	font-size:14px;
-	color:#FFF;
+	color:#000;
 }
 /****************************************************************/
 

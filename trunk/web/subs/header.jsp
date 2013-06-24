@@ -24,7 +24,7 @@
 
             <div class="banner_mau_gh">
                 <a href="index.jsp" >
-                <img src="imgs/layout10/banner_background.jpg" alt=""/>
+                    <img height="200" src="imgs/layout10/banner_background.jpg" alt=""/>
                 </a>
             </div><!-- End .banner_mau_gh -->
             <div class="menu_mau_gh">            	
@@ -45,11 +45,6 @@
                     <li><span class="line_menu"></span></li>
                     <%}%>
                 </ul>
-                <!-- welcome user -->
-                <%if (user != null) {%>
-                <div id="welcomeUser">Xin chào <%=user.getTenDangNhap()%>, <a href="thoat.jsp" title="" style="color:#FF0;">Thoát</a></div>
-                <%}%>
-                <!-- end welcome user -->
                 <div class="clear"></div>
             </div><!-- End .menu_mau_gh -->
 

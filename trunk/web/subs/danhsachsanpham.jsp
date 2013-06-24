@@ -21,19 +21,22 @@
                 <!-- begin list sp -->
                 <%for (SPPojo sp : dsSP) {%>
                 <li>
-                   <%if(sp.getMaKhuyenMai() > 0){
-                       KhuyenMaiPojo km = KhuyenMaiDao.layKhuyenMai(sp.getMaKhuyenMai());
-                   %>
-                    <a href="chitietsanpham.jsp?id=<%=sp.getMaSP()%>"><img src="<%=sp.getHinhAnh()%>" title="<%=km.getNoiDung()%>"/></a>
-                    <%}else{%>
                     <a href="chitietsanpham.jsp?id=<%=sp.getMaSP()%>"><img src="<%=sp.getHinhAnh()%>" title="<%=sp.getShortMoTa()%>"/></a>
-                    <%}%>
+                   
                     <h2 class="title_prod_news">
                         <a href="#" title=""><%=sp.getTenSP()%></a>
                     </h2>
                     <h4 class="price_prod_mau_gh"><%=sp.getGiaTien()%></h4>
+                    <%if(sp.getMaKhuyenMai() > 0){
+                       KhuyenMaiPojo km = KhuyenMaiDao.layKhuyenMai(sp.getMaKhuyenMai());
+                   %>
+                   <h2 class="title_prod_news">KM: <font style="color: #CC0000"><%=km.getNoiDung()%></font></h2>
+                    <%}%>
                     <h2 class="title_prod_news">
-                        <a href="xulydatmua.jsp?id=<%=sp.getMaSP()%>" title="">Cho Vào Giỏ Hàng</a>
+                        <form name="frmDatMua" method="POST" action="spcontroller">
+                            <input type="hidden" name="id" value="<%=sp.getMaSP()%>"/>
+                            <a href="#" onclick="document.forms['frmDatMua'].submit();" title="">Cho Vào Giỏ Hàng</a>
+                        </form>
                     </h2>
                 </li>
                 <%}%>                                    
