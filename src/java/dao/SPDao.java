@@ -587,10 +587,12 @@ public class SPDao {
             int n = (trang - 1) * soLuongTrenTrang;
             String sql;
             Calendar c = Calendar.getInstance();
-            int m = c.get(Calendar.MONTH);
+            int m = c.get(Calendar.MONTH)+1;
             int temp = 2-m;
             if(temp >= 0){
                 m = 12 - temp;
+            }else{
+                m -= 2;
             }
             c.set(Calendar.MONTH, m-1);
             if (soLuongTrenTrang != -1) {
@@ -623,14 +625,16 @@ public class SPDao {
         int soTrang = 0;
         int soLuong = 0;
         Calendar c = Calendar.getInstance();
-            int m = c.get(Calendar.MONTH);
+            int m = c.get(Calendar.MONTH)+1;
             int temp = 2-m;
             if(temp >= 0){
                 m = 12 - temp;
+            }else{
+                m -= 2;
             }
             c.set(Calendar.MONTH, m-1);
             
-        String sql = String.format("select count(*) as soluong from from sp where NgayNhap >= '%s'", Utility.getShortDate(c.getTime())) ;
+        String sql = String.format("select count(*) as soluong from sp where NgayNhap >= '%s'", Utility.getShortDate(c.getTime())) ;
 
         MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
         try {
