@@ -323,15 +323,13 @@ public class SPDao {
     
     public static boolean capNhatDSSP(List<SPPojo> lstSP) {
         try {
-            String sql = "";
-            for(int i =0; i < lstSP.size(); i++){
-                String temp = String.format("UPDATE `shopquanao`.`sp` SET `SoLuongTon`=%d WHERE `MaSP`=%d;",
-                    lstSP.get(i).getSoLuongTon(), lstSP.get(i).getMaSP());
-                sql += temp;
-            }
             MySqlDataAccessHelper helper = new MySqlDataAccessHelper();
             helper.open();
-            helper.executeUpdate(sql);
+            for(int i =0; i < lstSP.size(); i++){
+                String sql = String.format("UPDATE `shopquanao`.`sp` SET `SoLuongTon`=%d WHERE `MaSP`=%d",
+                    lstSP.get(i).getSoLuongTon(), lstSP.get(i).getMaSP());
+                helper.executeUpdate(sql);
+            }     
             helper.close();
         } catch (Exception e) {
             return false;

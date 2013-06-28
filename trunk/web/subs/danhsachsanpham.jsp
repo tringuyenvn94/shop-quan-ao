@@ -33,10 +33,7 @@
                    <h2 class="title_prod_news">KM: <font style="color: #CC0000"><%=km.getNoiDung()%></font></h2>
                     <%}%>
                     <h2 class="title_prod_news">
-                        <form name="frmDatMua" method="POST" action="spcontroller">
-                            <input type="hidden" name="id" value="<%=sp.getMaSP()%>"/>
-                            <a href="#" onclick="document.forms['frmDatMua'].submit();" title="">Cho Vào Giỏ Hàng</a>
-                        </form>
+                            <a href="xulydatmua.jsp?id=<%=sp.getMaSP()%>" title="">Cho Vào Giỏ Hàng</a>
                     </h2>
                 </li>
                 <%}%>                                    
